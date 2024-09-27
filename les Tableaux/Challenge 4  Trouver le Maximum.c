@@ -3,12 +3,12 @@
 int main(){
 
     int taill;
-    int Max = 0 ;
     
     printf("Entrer la taill : ");
     scanf("%d",&taill);
     
     int T[taill],n;
+    int Max = T[0] ;
     
     printf("\n");
     
