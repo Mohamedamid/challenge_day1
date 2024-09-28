@@ -1,45 +1,32 @@
 #include <stdio.h>
 
-int main(){
+int main() {
+    int size, i, j, temp;
+    printf("Entrer size de tableau : ");
+    scanf("%d", &size);
 
-    int taill;
-    
-    printf("Entrer la taill : ");
-    scanf("%d",&taill);
-    
-    int T[taill],n;
-    int Max = T[0] ;
-    
+    int T1[size];
     printf("\n");
+
+    for (i = 0; i < size; i++) {
+        printf("saisir le nombres de index %d : ",i);
+        scanf("%d", &T1[i]);
+    } 
     
-    for(int i = 0 ;i < taill ;i++){
-        
-        printf("Entrer la valeur : ");
-        scanf("%d",&n);
-        T[i] = n;
-    }
-    
-    printf("\n");
-    
-    for(int i = 0 ;i < taill ;i++){
-        
-        printf("les element de totale : %d\n",T[i]);
-    }
-    for(int i = 0 ;i < taill-1 ;i++){
-        for(int j = 0 ;j < taill-1 ;j++){
-            
-            int B = 0;
-            
-            if(B < T[j]){
-                
-                B = T[j];
-                T[i] = T[j+1];
-                T[j+1] = B;
+    for (i = 0; i < size - 1; i++) {
+        for (j = 0; j < size - 1 - i; j++) {
+            if (T1[j] > T1[j + 1]) {
+                temp = T1[j];
+                T1[j] = T1[j + 1];
+                T1[j + 1] = temp;
             }
-        }}  
-    
-    for(int i = 1 ;i < taill ;i ++){
-        
-        printf("\nle tableau trié en ordre croissant : %d", T[i]);
+        }
+    } 
+
+    printf("\n");
+    printf("- le tableau trié en ordre croissant : \n");
+
+    for (i = 0; i < size; i++) {
+        printf(" %d ,", T1[i]);
     }
 }
