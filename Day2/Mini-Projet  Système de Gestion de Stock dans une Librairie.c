@@ -5,7 +5,7 @@ int main() {
     
     int n_tab ,choix ,cpt = 0;;
     
-    printf("Entrer le nombre des tableaux : ");
+    printf("Entrer le nombre des LIVRES : ");
     scanf("%d", &n_tab);
     
     char t_livre[n_tab][3][20];
@@ -110,15 +110,15 @@ int main() {
             char m_livre[20] ,mm_livre[20] ,alivre[20] ,dlivre[20];
 
             printf("\nEntrer le livre à modifiare : ");
-            scanf("%s %s %s %s", &m_livre ,&mm_livre,&alivre ,&dlivre);
+            scanf(" %s %s %s %s", &m_livre ,&mm_livre,&alivre ,&dlivre);
             for (int i = 0; i < n_tab; i++) {
                 if (strcmp(t_livre[i][0], m_livre) == 0) {
-                        strcpy(t_livre[i][0], mm_livre);
-                        strcpy(t_livre[i][1], alivre);
-                        strcpy(t_livre[i][2], dlivre);
-                    }
+                    strcpy(t_livre[i][0], mm_livre);
+                    strcpy(t_livre[i][1], alivre);
+                    strcpy(t_livre[i][2], dlivre);
                     cpt = 1;
                     break;
+                }
             }
             if (cpt == 0) {
                 printf("\nLe livre n'est pas trouvé.\n");
